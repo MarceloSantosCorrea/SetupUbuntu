@@ -91,6 +91,9 @@ then
                 CreateHtaccess
                 ;;
             12)
+                InstallMySql
+                ;;
+            13)
                 InstallApache
                 ;;
         esac
