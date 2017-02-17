@@ -33,5 +33,54 @@ pacotes=$(whiptail --title "Instalation Requeriments" --checklist --fb \
         9 "Install Ioncube" OFF \
         10 "Enable MySql Remote" OFF \
         11 "Create htaccess" OFF \
-        12 "Create config.php" OFF 3>&1 1>&2 2>&3)
+        12 "Install Apache" OFF 3>&1 1>&2 2>&3)
     status=$?
+
+if [ $status = 0 ] && [ -n "$pacotes" ]
+then
+    for pacote in $pacotes
+    do
+        case `echo $pacote | sed -e 's/\"//g'` in
+            1)
+                InstallGit
+                ;;
+            2)
+                InstallPHP
+                FixApache2Conf
+                Apache2SitesAvailableDefaultConf
+                ;;
+            3)
+                CreateDatabaseMySql
+                ;;
+            4)
+                Vnstat
+                ;;
+            5)
+                FFmpeg
+                ;;
+            6)
+                Proftpd
+                ;;
+            7)
+                mLocate
+                ;;
+            8)
+                Apache2SitesAvailableDefaultConf
+                FixApache2Conf
+                ModRewriteApache
+                ;;
+            9)
+                InstallIoncube
+                ;;
+            10)
+                EnableRemoteMysql
+                ;;
+            11)
+                CreateHtaccess
+                ;;
+            12)
+                InstallApache
+                ;;
+        esac
+    done
+fi
