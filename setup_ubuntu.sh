@@ -32,7 +32,7 @@ InstallApache(){
 }
 
 pacotes=$(whiptail --title "Instalation Requeriments" --checklist --fb \
-        "" 20 40 11 \
+        "" 20 40 13 \
         1 "Git" OFF \
         2 "PHP" OFF \
         3 "Create Database MySql  " OFF \
