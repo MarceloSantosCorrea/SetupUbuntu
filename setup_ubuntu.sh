@@ -13,8 +13,15 @@ Loading() {
    tput cnorm
 }
 
+InstallGit(){
+    apt-get -y install git > /dev/null 2>&1
+    echo "Instalando Git"
+    printf "Aguarde...\040\040" ; Loading
+    printf "\033[1Dok\012"
+}
+
 InstallApache(){
-	apt-get -y install apache2 2>&1 &
+	apt-get -y install apache2 > /dev/null 2>&1
 	echo "Instalando Apache"
     printf "Aguarde...\040\040" ; Loading
     printf "\033[1Dok\012"
