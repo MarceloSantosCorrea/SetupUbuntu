@@ -44,7 +44,8 @@ pacotes=$(whiptail --title "Instalation Requeriments" --checklist --fb \
         9 "Install Ioncube" OFF \
         10 "Enable MySql Remote" OFF \
         11 "Create htaccess" OFF \
-        12 "Install Apache" OFF 3>&1 1>&2 2>&3)
+        12 "Install MySql" OFF \
+        13 "Install Apache" OFF 3>&1 1>&2 2>&3)
     status=$?
 
 if [ $status = 0 ] && [ -n "$pacotes" ]
