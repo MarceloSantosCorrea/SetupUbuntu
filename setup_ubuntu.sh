@@ -20,6 +20,10 @@ InstallGit(){
     printf "\033[1Dok\012"
 }
 
+InstallMySql(){
+	apt-get -y install mysql-server mysql-client
+}
+
 InstallApache(){
 	apt-get -y install apache2 > /dev/null 2>&1 &
 	echo "Instalando Apache"
