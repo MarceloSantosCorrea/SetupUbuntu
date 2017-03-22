@@ -115,7 +115,22 @@ ModRewriteApache(){
 }
 
 InstallPHP(){
-    echo "Instalando PHP"
+    sudo add-apt-repository ppa:ondrej/php
+    apt-get update;
+
+    apt-get install curl;
+    apt-get install php;
+    apt-get install php-mysql;
+    apt-get install php-cli;
+    apt-get install php-pear;
+    apt-get install php-intl;
+    apt-get install php-mcrypt;
+    apt-get install libapache2-mod-php;
+    apt-get install php-gd;
+    apt-get install php-xmlrpc;
+    apt-get install libapache2-mod-auth-mysql;
+    apt-get install php-curl;
+    apt-get install php-mbstring
 }
 
 InstallVnstat(){
